@@ -35,7 +35,7 @@ The file `src/modules/mock_data.json` itself should not be modified. Consider th
 	- Show validation error in `DonateForm` component if user does not have the required funds to contribute
 - [x] 5. Prevent `ProgressBar` component from visually overflowing when `progress > 1.0`
 - [x] 6. Sort campaigns in `CampaignNavigation` by goal progress (total contributions / goal)
-- [ ] 7. Resolve any generated warnings from Webpack & React that are displayed in the browser console
+- [x] 7. Resolve any generated warnings from Webpack & React that are displayed in the browser console
 
 ## Extras
 - [ ] Optimize data lookup (e.g memoize selectors or restructure redux state)

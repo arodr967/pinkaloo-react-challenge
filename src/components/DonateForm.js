@@ -33,6 +33,12 @@ const DonateForm = ({ campaign, currentBalance, dispatch }) => {
         return;
       }
 
+      // Validate amount
+      if (!Number(amount)) {
+        setError(`Please enter a valid amount.`);
+        return;
+      }
+
       // Dispatch action to add a new contribution
       dispatch(addContribution(Number(amount), campaign.id));
 

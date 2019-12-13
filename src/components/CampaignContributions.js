@@ -48,12 +48,15 @@ function Contributions({ contributions, users }) {
   // The complexity here is not the best because we are iterating through the
   // list of contributions at least twice. Not the best for performance reasons.
   const sortedContributionsByDate = orderBy(contributions, c => c.date, 'desc');
-  const mappedContributions = sortedContributionsByDate.map(contribution => (
-    <Contribution
-      contribution={contribution}
-      user={users.find(user => user.id === contribution.userId)}
-    />
-  ));
+  const mappedContributions = sortedContributionsByDate.map(
+    (contribution, i) => (
+      <Contribution
+        key={i}
+        contribution={contribution}
+        user={users.find(user => user.id === contribution.userId)}
+      />
+    )
+  );
   return (
     <div className="CampaignInfo-contributions">{mappedContributions}</div>
   );
