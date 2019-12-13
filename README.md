@@ -12,7 +12,7 @@ The file `src/modules/mock_data.json` itself should not be modified. Consider th
 - [x] Replace placeholder values in `CampaignDetails` component
 	- Display total dollar amount of contributions for the campaign
 	- Provide the campaign's goal progress to `ProgressBar `
-- [ ] Replace placeholder values in `CampaignContributions` component
+- [x] Replace placeholder values in `CampaignContributions` component
 	- Display the associated user avatar
 	- Display the associated user name. Show both `first_name` and `last_name` if available
 - [ ] Sort campaign contributions by date. Newest contributions should display at the top
