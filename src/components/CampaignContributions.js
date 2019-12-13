@@ -1,6 +1,5 @@
 import './CampaignContributions.css';
 import React from 'react';
-import Numeral from 'numeral';
 import Moment from 'moment';
 import { orderBy } from 'lodash';
 
@@ -28,7 +27,7 @@ function Contribution({ contribution, user }) {
 
   return (
     <div className="ContributionInfo">
-      <img className="UserImage" src={userInfo.image} />
+      <img className="UserImage" src={userInfo.image} alt="user" />
       <div className="ContributionInfo-user">
         <strong>{userInfo.name}</strong>
         <div>{amount} donated</div>
