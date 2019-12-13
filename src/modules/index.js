@@ -42,6 +42,15 @@ export const getContributions = state => {
 	return state.app.contributions
 }
 
+// Users
+export const getUsers = state => {
+	return state.app.users
+}
+
+export const getUserById = (state, userId) => {
+	return state.app.users.filter(user => user.id === userId)
+}
+
 // Campaigns
 export const getCampaigns = state => {
 	return state.app.campaigns

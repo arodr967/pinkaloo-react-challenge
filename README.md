@@ -9,7 +9,7 @@ The file `src/modules/mock_data.json` itself should not be modified. Consider th
 ## Tasks
 
 - [x] Run the app using `yarn start`
-- [ ] Replace placeholder values in `CampaignDetails` component
+- [x] Replace placeholder values in `CampaignDetails` component
 	- Display total dollar amount of contributions for the campaign
 	- Provide the campaign's goal progress to `ProgressBar `
 - [ ] Replace placeholder values in `CampaignContributions` component
