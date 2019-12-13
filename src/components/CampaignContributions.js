@@ -2,6 +2,7 @@ import './CampaignContributions.css';
 import React from 'react';
 import Numeral from 'numeral';
 import Moment from 'moment';
+import { orderBy } from 'lodash';
 
 // Converted the renderContribution function into a Function
 // Component instead for readability purposes and it seems like
@@ -44,15 +45,18 @@ function Contributions({ contributions, users }) {
   // function from the store. I couldn't figure out how to get
   // it working here, so due to time constraints, I passed down
   // the users and did the logic here instead.
+
+  // The complexity here is not the best because we are iterating through the
+  // list of contributions at least twice. Not the best for performance reasons.
+  const sortedContributionsByDate = orderBy(contributions, c => c.date, 'desc');
+  const mappedContributions = sortedContributionsByDate.map(contribution => (
+    <Contribution
+      contribution={contribution}
+      user={users.find(user => user.id === contribution.userId)}
+    />
+  ));
   return (
-    <div className="CampaignInfo-contributions">
-      {contributions.map(contribution => (
-        <Contribution
-          contribution={contribution}
-          user={users.find(user => user.id === contribution.userId)}
-        />
-      ))}
-    </div>
+    <div className="CampaignInfo-contributions">{mappedContributions}</div>
   );
 }
 

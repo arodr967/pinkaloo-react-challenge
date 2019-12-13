@@ -8,15 +8,15 @@ The file `src/modules/mock_data.json` itself should not be modified. Consider th
 
 ## Tasks
 
-- [x] Run the app using `yarn start`
-- [x] Replace placeholder values in `CampaignDetails` component
+- [x] 0. Run the app using `yarn start`
+- [x] 1. Replace placeholder values in `CampaignDetails` component
 	- Display total dollar amount of contributions for the campaign
 	- Provide the campaign's goal progress to `ProgressBar `
-- [x] Replace placeholder values in `CampaignContributions` component
+- [x] 2. Replace placeholder values in `CampaignContributions` component
 	- Display the associated user avatar
 	- Display the associated user name. Show both `first_name` and `last_name` if available
-- [ ] Sort campaign contributions by date. Newest contributions should display at the top
-- [ ] Add the ability to contribute to the selected campaign using the `DonateForm` component
+- [x] 3. Sort campaign contributions by date. Newest contributions should display at the top
+- [ ] 4. Add the ability to contribute to the selected campaign using the `DonateForm` component
 	- Create an addContribution function in `modules` that accepts accepts `amount` and `campaignId` as input parameters and returns a redux action
 	- Handle the created redux action in the app reducer and generate a full contribution using the `amount` and `campaignId`.
 		- Example Contribution (all attributes required):
@@ -33,9 +33,9 @@ The file `src/modules/mock_data.json` itself should not be modified. Consider th
 	    - The newly generated contribution should be appended to the `contributions` array in the app reducer state
 	- Decrease the user's available balance after successfully contributing
 	- Show validation error in `DonateForm` component if user does not have the required funds to contribute
-- [ ] Prevent `ProgressBar` component from visually overflowing when `progress > 1.0`
-- [ ] Sort campaigns in `CampaignNavigation` by goal progress (total contributions / goal)
-- [ ] Resolve any generated warnings from Webpack & React that are displayed in the browser console
+- [ ] 5. Prevent `ProgressBar` component from visually overflowing when `progress > 1.0`
+- [ ] 6. Sort campaigns in `CampaignNavigation` by goal progress (total contributions / goal)
+- [ ] 7. Resolve any generated warnings from Webpack & React that are displayed in the browser console
 
 ## Extras
 - [ ] Optimize data lookup (e.g memoize selectors or restructure redux state)
