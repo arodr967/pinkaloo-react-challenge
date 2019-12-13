@@ -1,8 +1,10 @@
 import sampleData from './mock_data';
+import moment from 'moment';
 
 const initialState = { ...sampleData };
 
 export const MERGE_SESSION = 'app/MERGE_SESSION';
+export const ADD_CONTRIBUTION = 'app/ADD_CONTRIBUTION';
 
 //- Redux
 export const app = (state = initialState, action) => {
@@ -13,6 +15,31 @@ export const app = (state = initialState, action) => {
       const session = { ...state.session, ...payload };
 
       return { ...state, session };
+    }
+
+    case ADD_CONTRIBUTION: {
+      const { amount, campaignId } = payload;
+      const id = state.contributions.length + 1;
+      const contribution = {
+        id,
+        amount,
+        campaignId,
+        date: moment(new Date()).format(),
+        userId: state.session.user.id
+      };
+      return {
+        ...state,
+        session: {
+          ...state.session,
+          user: {
+            ...state.session.user,
+            // Ideally, this should be done as part of another Action.
+            // Actions should only represent one logical change.
+            balance: state.session.user.balance - amount
+          }
+        },
+        contributions: [...state.contributions, contribution]
+      };
     }
 
     default: {
@@ -27,6 +54,13 @@ export const selectCampaignById = campaignId => {
   return {
     type: MERGE_SESSION,
     payload: { selectedCampaignId: campaignId }
+  };
+};
+
+export const addContribution = (amount, campaignId) => {
+  return {
+    type: ADD_CONTRIBUTION,
+    payload: { amount, campaignId }
   };
 };
 

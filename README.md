@@ -16,7 +16,7 @@ The file `src/modules/mock_data.json` itself should not be modified. Consider th
 	- Display the associated user avatar
 	- Display the associated user name. Show both `first_name` and `last_name` if available
 - [x] 3. Sort campaign contributions by date. Newest contributions should display at the top
-- [ ] 4. Add the ability to contribute to the selected campaign using the `DonateForm` component
+- [x] 4. Add the ability to contribute to the selected campaign using the `DonateForm` component
 	- Create an addContribution function in `modules` that accepts accepts `amount` and `campaignId` as input parameters and returns a redux action
 	- Handle the created redux action in the app reducer and generate a full contribution using the `amount` and `campaignId`.
 		- Example Contribution (all attributes required):
